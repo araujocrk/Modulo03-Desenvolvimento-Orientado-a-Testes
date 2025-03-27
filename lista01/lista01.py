@@ -1,5 +1,6 @@
 # Questão 01
 def par_impar(n):
+    
     return n % 2 == 0
 
 
@@ -59,13 +60,13 @@ def main():
     while True:
         try:
             num = int(input('Digite um número inteiro: '))
-            if par_impar(num) == True:
-                print('Este número é par!')
-            else:
-                print('Este número é impar!')
-            break
         except:
-            print('Número inválido. Tente novamente!')
+            print('Número inválido. Tente Novamete!')
+        if par_impar(num) == True:
+            print('Este número é par!')
+        else:
+            print('Este número é impar!')
+        break
 
 # Questão 02
 # Escreva um programa que leia o raio de um círculo e faça duas funções: uma função chamada área que calcula e retorna a área
