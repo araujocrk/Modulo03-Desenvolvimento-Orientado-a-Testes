@@ -1,20 +1,53 @@
-def qtdParesImpares(l100):
+import random
+
+def preencherListaInt(qtd, lista):
+    for i in range(qtd):
+        lista.append(random.randint(-100, 100))
+    print('Lista preenchida com sucesso!')
+    print(f'Lista: {lista}')
+
+def qtdPares(lista):
+    qtd = 0
+    for i in lista:
+        if i % 2 == 0:
+            qtd += 1
+    return f'Quantidade de números pares: {qtd}'
+
+def listaPares(lista):
     pares = []
-    impares = []
-    for i in l100:
+    for i in lista:
         if i % 2 == 0:
             pares.append(i)
-        else:
+    print(f'Lista de números pares: {pares}')
+
+def qtdImpares(lista):
+    qtd = 0
+    for i in lista:
+        if i % 2 != 0:
+            qtd += 1
+    return f'Quantidade de números ímpares: {qtd}'
+
+def listaImpares(lista):
+    impares = []
+    for i in lista:
+        if i % 2 != 0:
             impares.append(i)
-    return len(pares), pares, len(impares), impares
+    print(f'Lista de números ímpares: {impares}')
+
 def main():
 # 1) Faça um programa que grave uma lista de 100 elementos numéricos inteiros e:
 # a) Mostre a quantidade de números pares;
 # b) Grave uma lista somente com os números pares e mostre a lista;
 # c) Mostre a quantidade de números ímpares;
 # d) Grave uma lista somente com os números ímpares e mostre a lista.
-    l100 = list(range(100))
-    print(f'Quantidade de números pares: {qtdParesImpares(l100)[0]}\nNúmeros pares: {qtdParesImpares(l100)[1]}\nQuantidade de números ímpares: {qtdParesImpares(l100)[2]}\nNúmeros ímpares: {qtdParesImpares(l100)[3]}')
+
+    qtd = 100
+    lista = []
+    preencherListaInt(qtd, lista)
+    print(qtdPares(lista))
+    listaPares(lista)
+    print(qtdImpares(lista))
+    listaImpares(lista)
     
 if __name__ == '__main__':
     main()
