@@ -1,23 +1,32 @@
-def qtdNegativos(l10):
+import random
+
+def preencherListaFloat(qtd, lista):
+    for i in range(qtd):
+        lista.append(round(random.uniform(-100, 100), 2))
+    print('Lista preenchida com sucesso!')
+    print(f'Lista: {lista}')
+
+def qtdNegativos(lista):
     qtd = 0
-    for n in l10:
+    for n in lista:
         if n < 0:
             qtd += 1
     return qtd
 
-def somaPositivos(l10):
+def somaPositivos(lista):
     soma = 0
-    for n in l10:
+    for n in lista:
         if n > 0:
             soma += n
-    return soma
+    return f'{soma:.2f}'
 def main():
 # 2) Faça um programa que grave uma lista com dez números reais, calcule e mostre a quantidade
 # de números negativos e a soma dos números positivos dessa lista.
-    l10 = []
-    for n in range(10):
-        l10.append(float(input(f'Digite o {n+1} número: ')))
-    print(f'Quantidade de números negativos: {qtdNegativos(l10)}\nSoma dos números positivos: {somaPositivos(l10)}')
-    
+    qtd = 10
+    lista = []
+    preencherListaFloat(qtd, lista)
+    print(qtdNegativos(lista))
+    print(somaPositivos(lista))
+
 if __name__ == '__main__':
     main()
