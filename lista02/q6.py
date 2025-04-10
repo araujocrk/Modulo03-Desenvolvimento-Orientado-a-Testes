@@ -10,10 +10,12 @@ def calcularFaturamentoTotal(qtd, preco):
     faturamento = calcularFaturamento(qtd, preco)
     for i in faturamento:
         faturamentoTotal += i
+    print(f'Faturamento Total: {faturamentoTotal:.2f}')
     return faturamentoTotal
 
 def calcularMediaFaturamento(qtd, preco):
     faturamentoTotal = calcularFaturamentoTotal(qtd, preco)
+    print(f'Média faturamento: {faturamentoTotal / len(qtd):.2f}')
     return faturamentoTotal / len(qtd)
 
 def abaixoDaMedia(qtd, preco):
@@ -23,6 +25,7 @@ def abaixoDaMedia(qtd, preco):
     for i in faturamento:
         if i < media:
             qtdAbaixo += 1
+    print(f'Quantidade de faturamentos abaixo da média: {qtdAbaixo:.2f}')
     return qtdAbaixo
 
 def main():
@@ -38,9 +41,9 @@ def main():
         preco.append(round(random.uniform(5.00, 50.00), 2))
     
     print(calcularFaturamento(qtd, preco))
-    print(calcularFaturamentoTotal(qtd, preco))
-    print(calcularMediaFaturamento(qtd, preco))
-    print(abaixoDaMedia(qtd, preco))
+    calcularFaturamentoTotal(qtd, preco)
+    abaixoDaMedia(qtd, preco)
+    abaixoDaMedia(qtd, preco)
                     
 if __name__ == '__main__':
     main()
