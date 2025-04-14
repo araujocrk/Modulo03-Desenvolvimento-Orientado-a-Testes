@@ -10,12 +10,10 @@ def calcularFaturamentoTotal(qtd, preco):
     faturamento = calcularFaturamento(qtd, preco)
     for i in faturamento:
         faturamentoTotal += i
-    print(f'Faturamento Total: {faturamentoTotal:.2f}')
     return faturamentoTotal
 
 def calcularMediaFaturamento(qtd, preco):
     faturamentoTotal = calcularFaturamentoTotal(qtd, preco)
-    print(f'Média faturamento: {faturamentoTotal / len(qtd):.2f}')
     return faturamentoTotal / len(qtd)
 
 def abaixoDaMedia(qtd, preco):
@@ -25,7 +23,6 @@ def abaixoDaMedia(qtd, preco):
     for i in faturamento:
         if i < media:
             qtdAbaixo += 1
-    print(f'Quantidade de faturamentos abaixo da média: {qtdAbaixo:.2f}')
     return qtdAbaixo
 
 def main():
@@ -35,15 +32,16 @@ def main():
 # e quantos faturamentos estão abaixo da média.
     # qtd = [10, 5, 3, 8, 12, 7, 20, 15, 9, 4, 6, 18, 10, 14, 11, 13, 16, 19, 2, 17]
     # preco = [15.99, 25.50, 7.30, 10.00, 45.75, 30.40, 12.99, 8.50, 22.00, 5.99, 17.25, 13.60, 9.99, 19.99, 8.75, 18.40, 23.60, 11.10, 14.50, 27.30]
+    qtdProd = 20
     qtd, preco = [], []
-    for i in range(20):
+    for i in range(qtdProd):
         qtd.append(random.randint(1, 20))
         preco.append(round(random.uniform(5.00, 50.00), 2))
     
-    print(calcularFaturamento(qtd, preco))
-    calcularFaturamentoTotal(qtd, preco)
-    abaixoDaMedia(qtd, preco)
-    abaixoDaMedia(qtd, preco)
+    print(f'Lista de Faturamentos: {calcularFaturamento(qtd, preco)}')
+    print(f'Faturamento Total: {calcularFaturamentoTotal(qtd, preco):.2f}')
+    print(f'Média de faturamentos: {calcularMediaFaturamento(qtd, preco):.2f}')
+    print(f'Faturamentos abaixo da média: {abaixoDaMedia(qtd, preco)}')
                     
 if __name__ == '__main__':
     main()
