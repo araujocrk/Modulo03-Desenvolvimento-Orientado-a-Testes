@@ -1,3 +1,11 @@
+import random
+
+def preencherListaFloat(qtd, lista):
+    for i in range(qtd):
+        lista.append(round(random.uniform(-100, 100), 2))
+    print('Lista preenchida com sucesso!')
+    print(f'Lista: {lista}')
+
 def verificarValorEmLista(lista, valor):
     if valor in lista:
         return 'Valor já está dentro da lista'
@@ -14,12 +22,15 @@ def verificarValorEmLista2(lista, valor):
 def main():
 # 7) Dada uma lista contendo 10 elementos numéricos, elabore um programa que verifique se um
 # outro valor dado pertence ou não à lista.
-    l10 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    l = []
+    qtd = 10
+    preencherListaFloat(qtd, l)
+    
     while True:
         try:
-            valor = int(input('Digite o número inteiro para verificação: '))
-            print(verificarValorEmLista(l10, valor))
-            print(verificarValorEmLista2(l10, valor))
+            valor = float(input('Digite o número para verificação: '))
+            print(verificarValorEmLista(l, valor))
+            print(verificarValorEmLista2(l, valor))
             break
         except:
             print('Número inválido. Tente novamente.')
