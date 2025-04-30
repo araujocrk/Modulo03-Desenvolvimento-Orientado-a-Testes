@@ -1,4 +1,6 @@
 def poligonoRegular(nl, ml):
+    if isinstance(nl, str) or isinstance(ml, str) or nl < 3 or nl > 5 or ml <= 0:
+        return Exception
     if nl == 3:
         return f'TRIÂNGULO; Perímetro: {ml * nl} cm'
     elif nl == 4:
