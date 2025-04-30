@@ -1,5 +1,7 @@
 # Questão 01
 def par_impar(n):
+    if isinstance(n, (float, str)):
+        return Exception
     return n % 2 == 0
 
 def main():

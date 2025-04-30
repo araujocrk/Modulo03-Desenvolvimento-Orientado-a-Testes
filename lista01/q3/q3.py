@@ -1,6 +1,8 @@
 # Questão 03
 def fahrenheit_To_Celsius(f):
-    return ((f-32)/9)*5
+    if isinstance(f, str):
+        return Exception
+    return round(((f-32)/9)*5)
 
 def main():
     

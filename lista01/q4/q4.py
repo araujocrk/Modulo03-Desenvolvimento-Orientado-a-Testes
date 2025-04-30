@@ -1,9 +1,11 @@
 def passou_De_Ano(n1, n2):
+    if isinstance(n1, str) or isinstance(n2, str) or n1 < 0 or n2 < 0 or n1 > 10 or n2 > 10:
+        return Exception
     media = (n1 + n2) / 2
     if media >= 6:
-        return f'Média: {media}\nPARABÉNS! Você foi aprovado!'
+        return round(media, 1)
     else:
-        return f'Média: {media}\nVocê foi reprovado!'
+        return round(media, 1)
 
 def main():
     

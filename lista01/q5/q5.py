@@ -1,8 +1,12 @@
 def pesoIdeal(altura, sexo):
+    if isinstance(altura, str) or altura < 0.30 or altura > 2.80:
+        return Exception
     if sexo == 1:
-        return (62.1 * altura) - 44.7
+        return round((62.1 * altura) - 44.7, 2)
+    elif sexo == 2:
+        return round((72.7 * altura) - 58, 2)
     else:
-        return (72.7 * altura) - 58
+        return Exception
 
 def main():
     
