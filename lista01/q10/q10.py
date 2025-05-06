@@ -1,4 +1,6 @@
 def Max(n1, n2, n3, n4):
+    if not all(isinstance(x, int) for x in [n1, n2, n3, n4]):
+        return Exception
     maior = 0
     if n1 >= n2 and n1 >= n3 and n1 >= n4:
         maior = n1

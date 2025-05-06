@@ -1,15 +1,19 @@
-def somatorio(n):
-    soma = 0
+def divisores(n):
+    if not isinstance(n, int) or n <= 0:
+        return Exception
+    numDivisores = 0
     for i in range(1, n+1):
-        soma += i
-    return soma
+        if n % i == 0:
+            numDivisores += 1
+    return numDivisores
+
 def main():
-# 12. Escreva uma função que recebe, por parâmetro, um valor inteiro e positivo e retorna o somatório desse valor.
+# 11. Faça uma função que recebe, por parâmetro, um valor inteiro e positivo e retorna o número de divisores desse valor.
     while True:
         try:
             n = int(input('Digite um número inteiro e positivo: '))
             if n > 0:
-                print(f'O somatório de {n} é {somatorio(n)}')
+                print(f'O número de divisores de {n} é {divisores(n)}')
                 break
             else:
                 print('Número inválido. O número deve ser maior que 0!')

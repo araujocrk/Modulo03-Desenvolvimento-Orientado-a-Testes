@@ -1,13 +1,12 @@
-def lerCaractere():
+def lerCaractere(input_fn=input):
     while True:
-        caractere = input('Deseja escolher outro número? (S ou N): ').strip().upper()
-        if caractere[0] == 'S' or caractere[0] == 'N':
+        caractere = input_fn('Deseja escolher outro número? (S ou N): ').strip().upper()
+        if caractere and caractere[0] in ('S', 'N'):
             print(caractere[0])
             return caractere[0]
         else:
             print('Caractere inválido. Digite novamente')
-            lerCaractere()
-    
+
 def elevarAoCubo(n):
     return n ** 3
 
@@ -24,7 +23,7 @@ def main():
             if resposta == 'N':
                 print('Finalizando...')
                 break
-        except:
+        except ValueError:
             print('Número inválido. Tente novamente.')
             
 if __name__ == '__main__':

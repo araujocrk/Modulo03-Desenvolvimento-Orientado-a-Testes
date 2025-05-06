@@ -1,11 +1,11 @@
 def calcularFatorial(fatorial):
+    if isinstance(fatorial, (str, float)) or fatorial < 0:
+        return Exception
     resultado = 1
-    if fatorial == 0 or fatorial == 1:
-        return 1
-    else:
-        for i in range(1, fatorial + 1):
-            resultado *= i
-        return resultado
+
+    for i in range(1, fatorial + 1):
+        resultado *= i
+    return resultado
 
 def main():
 # 7. Faça um programa para calcular o Fatorial de um número. Para o cálculo do fatorial, sabemos que N! depende de (N-1)!; este por

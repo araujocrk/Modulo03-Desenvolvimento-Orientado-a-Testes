@@ -1,12 +1,13 @@
 def calcularS(n):
+    if not isinstance(n, int) or n <= 0:
+        return Exception
     s = 0
-    for t in range(1, n + 1):
-        s += ((t**2 + 1) / (t + 3))
-    return s
+    for i in range(1, n + 1):
+        s += 1 / i
+    return round(s, 2)
 
 def main():
-# 15. Escreva uma função que recebe por parâmetro um valor inteiro e positivo N e retorna o valor de S.
-# S = 2/4 + 5/5 + 10/6 + 17/7 + 26/8 + ... +(t^2+1)/(t+3)
+# 13. Escreva uma função que recebe por parâmetro um valor inteiro e positivo N e retorna o valor de S. S = 1 + ½ + 1/3 + ¼ + 1/5 + 1/N.
     while True:
         try:
             n = int(input('Digite um número inteiro e positivo: '))

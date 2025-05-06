@@ -1,4 +1,6 @@
 def somaIntervalo(n1, n2):
+    if not all(isinstance(x, int) for x in [n1, n2]) or n1 > n2:
+        return Exception
     soma = 0
     for i in range(n1, n2 + 1):
         soma += i
