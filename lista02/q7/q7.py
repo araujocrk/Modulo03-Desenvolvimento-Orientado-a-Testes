@@ -7,10 +7,12 @@ def preencherListaFloat(qtd, lista):
     print(f'Lista: {lista}')
 
 def verificarValorEmLista(lista, valor):
+    if not all(isinstance(i, (int, float)) for i in lista) or not isinstance(valor, (int, float)) or len(lista) <= 0:
+        return Exception
     if valor in lista:
-        return 'Valor já está dentro da lista'
+        return True
     else:
-        return 'Valor ainda não está dentro da lista.'
+        return False
     
 def verificarValorEmLista2(lista, valor):
     resultado = 'Valor ainda não está dentro da lista.'

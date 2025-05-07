@@ -7,6 +7,8 @@ def preencherListaStr(qtd, lista):
     print('Lista preenchida com sucesso!')
 
 def qtdDeA(lista):
+    if not all(isinstance (i, str) for i in lista):
+        return Exception
     contador = 0
     for l in lista:
         if l == 'A':

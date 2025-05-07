@@ -7,6 +7,8 @@ def preencherListaFloat(qtd, lista):
     print(f'Lista: {lista}')
     
 def inverterLista(lista):
+    if not all(isinstance(i, (int, float)) for i in lista):
+        return Exception
     y = []
     for i in lista:
         y.insert(0, i)

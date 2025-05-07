@@ -1,17 +1,21 @@
-def cadastrarNome(lista):
-    nome = input('Digite o nome que você deseja adicionar: ')
+def cadastrarNome(lista, nome):
+    if not all(isinstance(i, str) for i in lista) or not isinstance(nome, str):
+        return Exception
     lista.append(nome)
+    return lista
 
-def pesquisarNome(lista):
-    nome = input('Digite o nome que você deseja pesquisar: ')
+def pesquisarNome(lista, nome):
+    if not all(isinstance(i, str) for i in lista) or not isinstance(nome, str):
+        return Exception
     if nome in lista:
-        return 'Este nome está na lista.'
+        return True
     else:
-        return 'Este nome não está na lista.'
+        return False
     
 def listarNomes(lista):
-    for nome in lista:
-        print(nome)
+    if not all(isinstance(i, str) for i in lista):
+        return Exception
+    return lista
 
 def main():
 # 11) Faça um programa que alimente uma lista com um número de posições definidas pelo

@@ -7,21 +7,25 @@ def preencherListaInt(qtd, lista):
     print(f'Lista: {lista}')
 
 def maiorElementoESuaPosicao(lista):
+    if not all(isinstance(i, (int, float)) for i in lista) or len(lista) == 0:
+        return Exception
     maior = lista[0]
     posicao = 0
     for i in range(len(lista)):
         if lista[i] > maior:
             maior = lista[i]
-            posicao = i + 1
+            posicao = i
     return maior, posicao
 
 def menorElementoESuaPosicao(lista):
+    if not all(isinstance(i, (int, float)) for i in lista) or len(lista) == 0:
+        return Exception
     menor = lista[0]
     posicao = 0
     for i in range(len(lista)):
         if lista[i] < menor:
             menor = lista[i]
-            posicao = i + 1
+            posicao = i
     return menor, posicao
 
 def main():
